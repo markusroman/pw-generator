@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 import { generatePassword } from './helpers';
 
 import './App.css';
@@ -11,6 +13,7 @@ export const App = () => {
     numbers: true,
     symbols: true,
   });
+
   const createPassword = () => {
     const generated_password = generatePassword(length, filters);
     setPassword(generated_password);
@@ -65,6 +68,11 @@ export const App = () => {
 
         <button onClick={createPassword}>Create password</button>
         <p>{password}</p>
+        {password && (
+          <CopyToClipboard text={password}>
+            <button>Copy to clipboard with button</button>
+          </CopyToClipboard>
+        )}
       </div>
     </div>
   );
