@@ -70,7 +70,7 @@ export const App = () => {
         <p>{password}</p>
         {password && (
           <CopyToClipboard text={password}>
-            <button>Copy to clipboard with button</button>
+            <button>Copy to clipboard</button>
           </CopyToClipboard>
         )}
       </div>
